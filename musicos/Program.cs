@@ -1,2 +1,39 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿public class Musico
+{
+    public string Nombre { get; set; }
+    public Musico(string n) {Nombre = n;}
+    public void Saluda() {Console.WriteLine($"Hola, soy {Nombre}");}
+    public virtual void Toca() {Console.WriteLine("{Nombre} está tocando su instrumento");}    
+}
+    class Bajista : Musico
+    {
+        public string? Bajo { get; set; }
+        public Bajista (string n, string b) : base(n) {Bajo = b;}
+        public override void Toca() {Console.WriteLine($"{Nombre} está tocando el bajo");}
+    }
+
+    class Baterista : Musico
+    {
+        public string? Batería { get; set; }
+        public Baterista (string n, string b) : base(n) {Batería = b;}
+        public override void Toca() {Console.WriteLine($"{Nombre} está tocando la batería");}
+    }
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        List<Musico> grupo = new List<Musico>();
+        grupo.Add(new Bajista("Joe", "Yamaha"));
+        foreach (var m in grupo)
+        {
+            m.Saluda();
+        }
+        foreach (var m in grupo)
+        {
+            m.Toca();
+        }
+
+        Console.WriteLine("Hello, World!");
+    }
+}
