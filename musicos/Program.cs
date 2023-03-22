@@ -25,6 +25,10 @@ internal class Program
     {
         List<Musico> grupo = new List<Musico>();
         grupo.Add(new Bajista("Joe", "Yamaha"));
+        grupo.Add(new Baterista("John", "Pearl"));
+        grupo.Add(new Baterista("Paul", "el de los Beatles"));
+        grupo.Add(new Bajista("George", "el de los Beatles"));
+        grupo.Add(new Bajista("Ringo", "Gibson"));
         foreach (var m in grupo)
         {
             m.Saluda();
