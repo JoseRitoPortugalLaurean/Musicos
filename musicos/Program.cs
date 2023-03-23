@@ -1,9 +1,9 @@
-﻿public class Musico
+﻿abstract class Musico //clase abstracta que solo puede generar subclases, pero no objetos diretamente
 {
     public string Nombre { get; set; }
     public Musico(string n) {Nombre = n;}
     public void Saluda() {Console.WriteLine($"Hola, soy {Nombre}");}
-    public virtual void Toca() {Console.WriteLine("{Nombre} está tocando su instrumento");}    
+    public abstract void Toca();//para implementar métodos abstractos, debemos de usar la palabra reservada override
 }
     class Bajista : Musico
     {
